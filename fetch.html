@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="input13" value="8015" />
+    <button id="button13">Fetch</button>
+    <script>
+      const btn = document.querySelector('#button13');
+      const inp = document.querySelector('#input13');
+
+      const fetchName = async () => {
+        const req = await fetch('/login');
+        const name = await req.text();
+        inp.value = name;
+      };
+
+      btn.addEventListener('click', fetchName);
+    </script>
+  </body>
+</html>
